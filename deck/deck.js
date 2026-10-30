@@ -30,7 +30,7 @@
 
   const builders = {
     title: (s, i) => `<section class="slide title-slide">
-        ${s.end ? "" : logoImgs}
+        ${logoImgs}
         <h1>${s.end ? s.title : `Build <em>stateful</em> AI agents with ${s.title}`}</h1>
         <p>${s.sub}</p>
         <div class="chips">${(s.chips || []).map((c) => `<span class="chip">${c}</span>`).join("")}</div>
@@ -41,7 +41,7 @@
         <div class="diagram-layout">
           <div class="diagram-card" data-zoom title="Click to enlarge"><img src="${s.img}" alt="${s.title}"></div>
           <div><ul class="points">${s.points.map((p, k) => `<li class="frag"><span class="n">${k + 1}</span><span>${p}</span></li>`).join("")}</ul>
-          <div class="hint"><kbd>C</kbd> code · <kbd>L</kbd> laser · <kbd>R</kbd> docs · click diagram to zoom</div>${docsRow(s)}</div>
+          <div class="foot"><div class="hint"><kbd>C</kbd> code · <kbd>L</kbd> laser · <kbd>R</kbd> docs · click diagram to zoom</div>${docsRow(s)}</div></div>
         </div></section>`,
     quiz: (s, i) => `<section class="slide">${chrome(s, i)}
         <div class="quiz-wrap"><div class="kicker">${s.kicker}</div><div class="quiz-q">${s.q}</div>
@@ -78,10 +78,12 @@
     `<div id="codepanel"><div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span id="code-title"></span><button id="copy">Copy</button></div><pre><code id="code-body"></code></pre></div>`;
   const nodes = [...stage.querySelectorAll(".slide")];
 
-  /* ---------- scale to fit ---------- */
+  /* ---------- scale to fit (desktop) / fluid layout (phones) ---------- */
+  const mobile = () => document.body.classList.contains("mobile");
   function fit() {
-    const k = Math.min(innerWidth / 1280, innerHeight / 720);
-    stage.style.transform = `scale(${k})`;
+    document.body.classList.toggle("mobile", innerWidth <= 820 || innerHeight <= 480);
+    if (mobile()) { stage.style.transform = "none"; if (typeof laserOn !== "undefined" && laserOn) setLaser(false); }
+    else { const k = Math.min(innerWidth / 1280, innerHeight / 720); stage.style.transform = `scale(${k})`; }
     resizeLaser();
   }
   addEventListener("resize", fit);
@@ -94,21 +96,22 @@
     const fr = fragsOf(nodes[idx]);
     frag = keepFrags ? fr.length : 0;
     fr.forEach((f, k) => f.classList.toggle("shown", k < frag));
-    if (slides[idx].type === "summary" || !fr.length) { fr.forEach((f) => f.classList.add("shown")); frag = fr.length; }
+    if (slides[idx].type === "summary" || !fr.length || mobile()) { fr.forEach((f) => f.classList.add("shown")); frag = fr.length; }
     $("#counter").textContent = `${idx + 1} / ${slides.length}`;
     $("#progress i").style.width = `${((idx + 1) / slides.length) * 100}%`;
     $("#notes-body").textContent = slides[idx].notes || "No notes for this slide.";
+    nodes[idx].scrollTop = 0;
     closeCode(); history.replaceState(null, "", `#${idx + 1}`);
     $("#btn-code").style.opacity = slides[idx].code ? 1 : .35;
   }
   function next() {
     const fr = fragsOf(nodes[idx]);
-    if (frag < fr.length) { fr[frag++].classList.add("shown"); return; }
+    if (!mobile() && frag < fr.length) { fr[frag++].classList.add("shown"); return; }
     if (idx < slides.length - 1) show(idx + 1);
   }
   function prev() {
     const fr = fragsOf(nodes[idx]);
-    if (frag > 0 && slides[idx].type !== "summary") { fr[--frag].classList.remove("shown"); return; }
+    if (!mobile() && frag > 0 && slides[idx].type !== "summary") { fr[--frag].classList.remove("shown"); return; }
     if (idx > 0) show(idx - 1, true);
   }
 
@@ -246,10 +249,18 @@
   $("#btn-overview").onclick = () => toggleOverview(); $("#btn-code").onclick = toggleCode; $("#btn-notes").onclick = toggleNotes;
   $("#btn-laser").onclick = () => setLaser(!laserOn); $("#btn-theme").onclick = toggleTheme; $("#btn-full").onclick = toggleFull;
   let idleT; const dock = $("#dock");
-  const wake = () => { dock.classList.remove("idle"); clearTimeout(idleT); idleT = setTimeout(() => !laserOn && dock.classList.add("idle"), 3500); };
+  const wake = () => { dock.classList.remove("idle"); clearTimeout(idleT); idleT = setTimeout(() => !laserOn && !mobile() && dock.classList.add("idle"), 3500); };
   addEventListener("mousemove", wake); addEventListener("keydown", wake); wake();
   // click on empty slide area advances (not while laser is on, and not on controls)
-  stage.addEventListener("click", (e) => { if (laserOn || e.target.closest("button, .diagram-card, #codepanel, .panel, .opt, a")) return; next(); });
+  stage.addEventListener("click", (e) => { if (mobile() || laserOn || e.target.closest("button, .diagram-card, #codepanel, .panel, .opt, a")) return; next(); });
+
+  /* ---------- touch: swipe left / right ---------- */
+  let tx = 0, ty = 0;
+  stage.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener("touchend", (e) => {
+    const t = e.changedTouches[0], dx = t.clientX - tx, dy = t.clientY - ty;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) (dx < 0 ? next : prev)();
+  }, { passive: true });
 
   /* ---------- init ---------- */
   try { const t = localStorage.getItem("deck-theme"); if (t) setTheme(t); } catch (e) {}
