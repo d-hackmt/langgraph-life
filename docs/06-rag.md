@@ -68,6 +68,12 @@ The smartest of the three:
 - [ ] How each RAG type adds one new idea: *decide*, then *correct*, then *route and verify*
 - [ ] How to turn a retriever into a tool
 
+## Official docs
+
+- [RAG](https://docs.langchain.com/oss/python/langchain/rag)
+- [Retrieval](https://docs.langchain.com/oss/python/langchain/retrieval)
+- [Agentic RAG](https://docs.langchain.com/oss/python/langgraph/agentic-rag)
+
 ## Try it yourself
 
 In Corrective RAG, ask a question about agent memory (answer is in the posts) and then one about today's news (answer needs the web). Watch which path the printed `---STEP---` lines follow.

@@ -86,6 +86,14 @@ agent = create_agent(model=llm, tools=tools, checkpointer=MemorySaver())
 - [ ] An agent is just a graph with a loop
 - [ ] `create_agent` is the quick way to build one
 
+## Official docs
+
+- [Streaming](https://docs.langchain.com/oss/python/langgraph/streaming)
+- [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)
+- [Add memory](https://docs.langchain.com/oss/python/langgraph/add-memory)
+- [Tools](https://docs.langchain.com/oss/python/langchain/tools)
+- [Agents](https://docs.langchain.com/oss/python/langchain/agents)
+
 ## Try it yourself
 
 Write a `subtract` tool, add it to the tool list, and ask the agent: "Add 5 and 8, then subtract 3."

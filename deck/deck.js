@@ -20,6 +20,10 @@
     });
   }
 
+  /* ---------- official docs links ---------- */
+  slides.forEach((s) => { s.docs = (window.DOCS && window.DOCS[s.title]) || null; });
+  const docsRow = (s) => s.docs ? `<div class="docs-row"><span>Official docs</span>${s.docs.map(([t, u]) => `<a href="${DOC + u}" target="_blank" rel="noopener noreferrer">${t} ↗</a>`).join("")}</div>` : "";
+
   /* ---------- slide builders ---------- */
   const chrome = (s, i) => `<div class="chrome">${logoImgs}<span class="section-tag"><b>${String(i + 1).padStart(2, "0")}</b>${s.section}</span></div>`;
   const head = (s) => `<div class="kicker">${s.kicker || ""}</div><h2>${s.title}</h2>`;
@@ -37,7 +41,7 @@
         <div class="diagram-layout">
           <div class="diagram-card" data-zoom title="Click to enlarge"><img src="${s.img}" alt="${s.title}"></div>
           <div><ul class="points">${s.points.map((p, k) => `<li class="frag"><span class="n">${k + 1}</span><span>${p}</span></li>`).join("")}</ul>
-          <div class="hint"><kbd>C</kbd> show code · <kbd>L</kbd> laser · click diagram to zoom</div></div>
+          <div class="hint"><kbd>C</kbd> code · <kbd>L</kbd> laser · <kbd>R</kbd> docs · click diagram to zoom</div>${docsRow(s)}</div>
         </div></section>`,
     quiz: (s, i) => `<section class="slide">${chrome(s, i)}
         <div class="quiz-wrap"><div class="kicker">${s.kicker}</div><div class="quiz-q">${s.q}</div>
@@ -54,9 +58,9 @@
             <div style="margin-bottom:16px"><div class="seg" data-reducer><button data-r="append" class="on">append · add_messages</button><button data-r="overwrite">overwrite · default</button></div></div>
             <div class="ctrls"><button class="btn primary" data-act="step">Step ›</button><button class="btn" data-act="reset">Reset</button></div></div>
           <div class="panel"><h3>State</h3><div class="statebox" data-state></div></div>
-        </div></section>`,
+        </div>${docsRow(s)}</section>`,
     summary: (s, i) => `<section class="slide">${chrome(s, i)}${head(s)}
-        <div class="cards">${s.cards.map(([ic, t, d]) => `<div class="card frag"><div class="ico">${ic}</div><h4>${t}</h4><p>${d}</p></div>`).join("")}</div></section>`,
+        <div class="cards">${s.cards.map(([ic, t, d]) => `<div class="card frag"><div class="ico">${ic}</div><h4>${t}</h4><p>${d}</p></div>`).join("")}</div>${docsRow(s)}</section>`,
   };
 
   function titleArt() {
@@ -217,6 +221,11 @@
     if (laserOn) raf = requestAnimationFrame(loop);
   }
 
+  function openDocs() {
+    const l = slides[idx].docs; if (!l) return toast("No docs link on this slide");
+    window.open(DOC + l[0][1], "_blank", "noopener"); toast("Opened: " + l[0][0]);
+  }
+
   /* ---------- keys / buttons / idle dock ---------- */
   addEventListener("keydown", (e) => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -229,6 +238,7 @@
     else if (/^[oO]$/.test(k)) toggleOverview();
     else if (/^[cC]$/.test(k)) toggleCode();
     else if (/^[nN]$/.test(k)) toggleNotes();
+    else if (/^[rR]$/.test(k)) openDocs();
     else if (/^[dD]$/.test(k)) toggleTheme();
     else if (/^[fF]$/.test(k)) toggleFull();
   });

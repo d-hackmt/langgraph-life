@@ -60,6 +60,11 @@ The graph is tiny: `retrieve` then `answer`.
 - [ ] How to send images to a model in a message
 - [ ] How the same `retrieve` then `answer` graph pattern works for images
 
+## Official docs
+
+- [Messages: multimodal input](https://docs.langchain.com/oss/python/langchain/messages#multimodal)
+- [RAG](https://docs.langchain.com/oss/python/langchain/rag)
+
 ## Try it yourself
 
 Replace the paper with another public PDF (a report with charts works well) and ask a question whose answer is only in a chart.

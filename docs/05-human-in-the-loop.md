@@ -70,6 +70,11 @@ Whatever you pass to `resume=` becomes the return value of `interrupt()`.
 - [ ] How `Command(goto=..., update=...)` chooses the next step and changes state
 - [ ] Approve, reject and edit are three common human decisions
 
+## Official docs
+
+- [Interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts)
+- [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)
+
 ## Try it yourself
 
 Make the approval step only ask a human for `divide` calls, and let `add` and `multiply` run automatically.

@@ -59,6 +59,11 @@ langgraph dev
 - [ ] How to start `langgraph dev` and open Studio
 - [ ] How to read a run step by step to find a bug
 
+## Official docs
+
+- [Studio](https://docs.langchain.com/oss/python/langgraph/studio)
+- [Run a local server](https://docs.langchain.com/oss/python/langgraph/local-server)
+
 ## Try it yourself
 
 Start Studio, send "What is 10 + 5?", and open each step. Find the exact moment the tool is called.

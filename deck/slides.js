@@ -306,3 +306,32 @@ llm.invoke([HumanMessage(content=content)])`,
   { type: "title", section: "End", title: "Thank you", sub: "Questions? Press <b>O</b> to jump back to any slide.", chips: [], end: true,
     notes: "" },
 ];
+
+// Official documentation links, one list so a moved page is a one-line fix.
+const DOC = "https://docs.langchain.com/oss/python/";
+window.DOCS = {
+  "State, nodes, edges": [["Graph API", "langgraph/graph-api"], ["Use the Graph API", "langgraph/use-graph-api"]],
+  "Conditional edges": [["Graph API", "langgraph/graph-api"], ["Use the Graph API", "langgraph/use-graph-api"]],
+  "Reducers: append, don't overwrite": [["Graph API", "langgraph/graph-api"]],
+  "Reducer live demo": [["Graph API", "langgraph/graph-api"]],
+  "Streaming and memory": [["Streaming", "langgraph/streaming"], ["Persistence", "langgraph/persistence"], ["Add memory", "langgraph/add-memory"]],
+  "Three ways to define state": [["Graph API", "langgraph/graph-api"]],
+  "An LLM that can call tools": [["Tools", "langchain/tools"]],
+  "Many tools, one model": [["Tools", "langchain/tools"]],
+  "The ReAct agent loop": [["Agents", "langchain/agents"]],
+  "Prompt chaining": [["Workflows and agents", "langgraph/workflows-agents"]],
+  "Parallelization": [["Workflows and agents", "langgraph/workflows-agents"]],
+  "Routing": [["Workflows and agents", "langgraph/workflows-agents"]],
+  "Orchestrator and workers": [["Workflows and agents", "langgraph/workflows-agents"]],
+  "Evaluator and optimizer": [["Workflows and agents", "langgraph/workflows-agents"]],
+  "Static breakpoints": [["Interrupts", "langgraph/interrupts"]],
+  "Approve, reject or edit": [["Interrupts", "langgraph/interrupts"]],
+  "Debug in LangGraph Studio": [["Studio", "langgraph/studio"], ["Run a local server", "langgraph/local-server"]],
+  "The RAG pipeline": [["RAG", "langchain/rag"], ["Retrieval", "langchain/retrieval"]],
+  "Agentic RAG": [["Agentic RAG", "langgraph/agentic-rag"]],
+  "Corrective RAG": [["Agentic RAG", "langgraph/agentic-rag"], ["RAG", "langchain/rag"]],
+  "Adaptive RAG": [["Agentic RAG", "langgraph/agentic-rag"], ["RAG", "langchain/rag"]],
+  "Multimodal RAG with Gemini": [["Messages: multimodal", "langchain/messages#multimodal"], ["RAG", "langchain/rag"]],
+  "What you can now build": [["LangGraph overview", "langgraph/overview"], ["Graph API", "langgraph/graph-api"], ["Agents", "langchain/agents"],
+                              ["Workflows", "langgraph/workflows-agents"], ["Interrupts", "langgraph/interrupts"], ["RAG", "langchain/rag"]],
+};

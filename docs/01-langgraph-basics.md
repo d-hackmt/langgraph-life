@@ -75,6 +75,12 @@ class State(TypedDict):
 - [ ] `add_conditional_edges` lets the graph choose a path
 - [ ] A reducer such as `add_messages` decides how updates are merged
 
+## Official docs
+
+- [Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)
+- [Use the Graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api)
+- [LangGraph overview](https://docs.langchain.com/oss/python/langgraph/overview)
+
 ## Try it yourself
 
 Add a third sport (for example `chess`) to the conditional edge. You need one new node, one new edge to `END`, and one more value in the `Literal`.

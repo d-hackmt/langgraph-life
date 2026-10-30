@@ -85,6 +85,10 @@ def assign_workers(state):
 - [ ] `Send` creates workers at run time
 - [ ] A loop needs a way to stop (accept, or a retry limit)
 
+## Official docs
+
+- [Workflows and agents](https://docs.langchain.com/oss/python/langgraph/workflows-agents)
+
 ## Try it yourself
 
 In the evaluator notebook, change the topic and watch how many rounds it takes before the joke is accepted.
