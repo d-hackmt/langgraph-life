@@ -1,0 +1,28 @@
+# Tested with Python 3.14 (also fine on 3.10+). Install with:  uv pip install -r requirements.txt
+langgraph==1.2.18
+langchain==1.4.7
+langchain-core==1.7.3
+langchain-openai==1.7.3
+langchain-text-splitters==1.1.3
+python-dotenv==1.2.4
+langgraph-cli[inmem]
+
+# used by the notebooks
+requests
+beautifulsoup4==4.15.0
+tiktoken==0.14.0
+arxiv==4.0.2
+wikipedia==1.4.0
+ipykernel
+nbformat
+nbclient
+
+# multimodal notebook (13 - Multimodal)
+langchain-google-genai==4.4.2
+google-genai==2.34.0
+pymupdf
+pillow
+numpy
+
+# optional: dedicated search API instead of OpenAI's built-in web search
+# langchain-tavily

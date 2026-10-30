@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LangGraph: Build Stateful AI Agents</title>
+<link rel="icon" href="assets/langgraph-logo-light.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="viewport">
+  <div id="stage"></div>
+</div>
+
+<div id="progress"><i></i></div>
+
+<nav id="dock" aria-label="Presentation controls">
+  <button id="prev" title="Previous (←)" aria-label="Previous slide">‹</button>
+  <span id="counter">1 / 1</span>
+  <button id="next" title="Next (→ or Space)" aria-label="Next slide">›</button>
+  <span class="sep"></span>
+  <button id="btn-overview" title="Overview (O)" aria-label="Overview">▦</button>
+  <button id="btn-code" title="Show code (C)" aria-label="Code">&lt;/&gt;</button>
+  <button id="btn-notes" title="Speaker notes (N)" aria-label="Notes">✎</button>
+  <button id="btn-laser" title="Laser pointer (L)" aria-label="Laser pointer">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+  </button>
+  <button id="btn-theme" title="Dark / light (D)" aria-label="Toggle theme">◐</button>
+  <button id="btn-full" title="Fullscreen (F)" aria-label="Fullscreen">⛶</button>
+</nav>
+
+<aside id="overview" hidden>
+  <div class="ov-head"><strong>All slides</strong><span>Click a slide to jump. Esc to close.</span></div>
+  <div id="ov-grid"></div>
+</aside>
+
+<aside id="notes" hidden>
+  <div class="notes-head"><strong>Speaker notes</strong><button id="notes-close" aria-label="Close notes">×</button></div>
+  <div id="notes-body"></div>
+</aside>
+
+<div id="lightbox" hidden><img alt=""></div>
+<div id="toast" hidden></div>
+
+<canvas id="laser"></canvas>
+
+<script src="slides.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>
