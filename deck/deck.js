@@ -254,7 +254,7 @@
   // click on empty slide area advances (not while laser is on, and not on controls)
   stage.addEventListener("click", (e) => { if (mobile() || laserOn || e.target.closest("button, .diagram-card, #codepanel, .panel, .opt, a")) return; next(); });
 
-  /* ---------- mouse wheel / trackpad: scroll to change slides (desktop) ---------- */
+  /* ---------- mouse wheel / trackpad: scroll = arrow keys, step by step (desktop) ---------- */
   let wheelLock = false, wheelAcc = 0, wheelRelease = 0, wheelMax = 0;
   addEventListener("wheel", (e) => {
     if (mobile() || e.ctrlKey || !ov.hidden || !lb.hidden) return;        // pinch-zoom, overview and lightbox keep native behaviour
@@ -267,8 +267,7 @@
     if (Math.abs(wheelAcc) < 40) return;                                   // ignore tiny nudges
     const dir = wheelAcc > 0 ? 1 : -1; wheelAcc = 0; wheelLock = true;
     clearTimeout(wheelMax); wheelMax = setTimeout(() => { wheelLock = false; }, 2500); // safety cap; momentum from a trackpad swipe can last over a second
-    if (dir > 0 && idx < slides.length - 1) show(idx + 1, true);
-    else if (dir < 0 && idx > 0) show(idx - 1, true);
+    (dir > 0 ? next : prev)();                                             // same steps as the arrow keys: reveal each point, then change slide
   }, { passive: false });
 
   /* ---------- touch: swipe left / right ---------- */

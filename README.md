@@ -33,7 +33,7 @@ Hands-on notebooks and an interactive slide deck that take you from your first g
 | `C` | Show the slide's code | `N` | Speaker notes |
 | `O` | Overview of all slides | `D` | Dark / light |
 | `F` | Fullscreen | `Esc` | Close panels, turn off laser |
-| Mouse wheel / trackpad | Previous or next slide | Swipe (phone) | Previous or next slide |
+| Mouse wheel / trackpad | Same as the arrow keys: reveals each point, then changes slide | Swipe (phone) | Previous or next slide |
 
 You can also run it locally: open `deck/index.html` in a browser.
 
