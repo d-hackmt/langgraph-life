@@ -36,6 +36,10 @@ Hands-on notebooks and an interactive slide deck that take you from your first g
 
 You can also run it locally: open `deck/index.html` in a browser.
 
+## Simple guides
+
+New to this? Start with the [docs](docs/README.md): one short guide per folder, in plain words with small examples, covering what is inside and what you should learn.
+
 ## Learning path
 
 | # | Folder | You will learn | Diagram |
