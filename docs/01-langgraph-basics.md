@@ -6,7 +6,7 @@
 
 | Notebook | What it shows |
 |---|---|
-| [1-simplegraph krish](../01-langgraph-basics/1-simplegraph%20krish.ipynb) | Your first graph: state, nodes, edges, and a choice between two paths |
+| [1-simplegraph](../01-langgraph-basics/1-simplegraph.ipynb) | Your first graph: state, nodes, edges, and a choice between two paths |
 | [2-chatbot](../01-langgraph-basics/2-chatbot.ipynb) | A simple chatbot that remembers the conversation |
 
 ## The big idea, in simple words
