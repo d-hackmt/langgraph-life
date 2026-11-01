@@ -1,0 +1,26 @@
+[
+  {
+    "company": "Northwind Cloud Systems",
+    "quarter": "Q3 FY2026",
+    "revenue": "$2.4B",
+    "text": "Northwind Cloud Systems reported Q3 FY2026 revenue of $2.4B, up 15% year-over-year, driven by enterprise cloud adoption and strict operational efficiencies. Subscription revenue grew 21% to $1.9B and now makes up 79% of total revenue. Operating margin expanded to 24.1% from 19.8% a year ago after the company consolidated three data centers. Net income was $412M, or $1.38 per diluted share. Remaining performance obligations rose 18% to $11.2B. Management raised full-year revenue guidance to $9.5B-$9.6B but warned that a slowdown in public-sector deals could pressure Q4 bookings."
+  },
+  {
+    "company": "Bluepeak Retail Group",
+    "quarter": "Q3 FY2026",
+    "revenue": "$5.8B",
+    "text": "Bluepeak Retail Group posted Q3 FY2026 revenue of $5.8B, down 3% year-over-year, as foot traffic in physical stores fell 7%. E-commerce sales grew 12% and now represent 31% of revenue. Gross margin slipped to 33.5% from 35.2% because of heavier promotions to clear excess seasonal inventory. Inventory ended the quarter at $3.1B, 9% lower than last year. The company cut its full-year earnings-per-share outlook to $2.10-$2.25 from $2.40-$2.60 and announced the closure of 40 underperforming stores."
+  },
+  {
+    "company": "Helix Biotherapeutics",
+    "quarter": "Q3 FY2026",
+    "revenue": "$640M",
+    "text": "Helix Biotherapeutics reported Q3 FY2026 revenue of $640M, up 48% year-over-year, led by its oncology drug Veltrexa, whose sales reached $455M. R&D spending increased 22% to $210M as two Phase III trials entered enrollment. The company turned profitable for the second straight quarter with net income of $58M. Cash and investments totaled $2.7B. Management expects Veltrexa label expansion in the EU during the first half of next year, but flagged pricing pressure from upcoming US drug-price negotiations as a key risk."
+  },
+  {
+    "company": "Ironclad Logistics",
+    "quarter": "Q3 FY2026",
+    "revenue": "$1.1B",
+    "text": "Ironclad Logistics delivered Q3 FY2026 revenue of $1.1B, flat year-over-year, as lower freight rates offset a 6% increase in shipment volume. Operating ratio improved to 86.4% from 89.1% thanks to route-optimization software deployed across 70% of the fleet. Fuel costs fell 11%. Free cash flow was $96M, and the board approved a $250M share buyback. Management kept full-year guidance unchanged and said it expects freight rates to stabilize in the first quarter of next year."
+  }
+]

@@ -1,0 +1,6 @@
+ticket_id,customer,tier,message
+T-4049,Alice Corp,enterprise,"Our whole checkout API returns error 503 since 9am. We are losing sales every minute."
+T-4050,Bob's Bakery,free,"How do I change the colour of my dashboard?"
+T-4051,Cygnus Health,enterprise,"After rotating our API keys every request fails with 401 Unauthorized."
+T-4052,Delta Tutors,pro,"We were charged for the Enterprise plan but we are on Pro. Please fix the invoice."
+T-4053,Echo Media,pro,"Our webhooks stopped arriving yesterday evening."
