@@ -24,5 +24,9 @@ pymupdf
 pillow
 numpy
 
+# end-to-end notebooks (08): Exa web search and Rius observability
+langchain-exa==1.1.0
+glassflow-rius[langchain]==1.5.5
+
 # optional: dedicated search API instead of OpenAI's built-in web search
 # langchain-tavily

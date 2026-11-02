@@ -11,6 +11,7 @@ Read these in order, or jump to the topic you need. Each guide uses plain words 
 | 05 | [Human in the loop](05-human-in-the-loop.md) | Pause, ask a person, continue |
 | 06 | [RAG](06-rag.md) | Answer from your own documents, and check the answer |
 | 07 | [Multimodal](07-multimodal.md) | Search PDF pages as images |
+| 08 | [Observability with Rius](08-observability-with-rius.md) | See every step, token and cost of your agents |
 
 ## The whole course in one picture
 

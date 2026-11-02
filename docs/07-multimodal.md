@@ -69,4 +69,4 @@ The graph is tiny: `retrieve` then `answer`.
 
 Replace the paper with another public PDF (a report with charts works well) and ask a question whose answer is only in a chart.
 
-**Previous:** [06](06-rag.md) · **Back to** [docs home](README.md)
+**Previous:** [06](06-rag.md) · **Next:** [08. Observability with Rius](08-observability-with-rius.md) · **Back to** [docs home](README.md)
