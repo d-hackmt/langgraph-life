@@ -28,5 +28,9 @@ numpy
 langchain-exa==1.1.0
 glassflow-rius[langchain]==1.5.5
 
+# MCP notebook (09): MCP client and server, and Tavily's Python client
+langchain[mcp]==1.4.7
+tavily-python==0.8.5
+
 # optional: dedicated search API instead of OpenAI's built-in web search
 # langchain-tavily

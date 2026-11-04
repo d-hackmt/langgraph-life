@@ -12,6 +12,7 @@ Read these in order, or jump to the topic you need. Each guide uses plain words 
 | 06 | [RAG](06-rag.md) | Answer from your own documents, and check the answer |
 | 07 | [Multimodal](07-multimodal.md) | Search PDF pages as images |
 | 08 | [Observability with Rius](08-observability-with-rius.md) | See every step, token and cost of your agents |
+| 09 | [MCP](09-mcp.md) | Share tools across apps, and know when not to |
 
 ## The whole course in one picture
 

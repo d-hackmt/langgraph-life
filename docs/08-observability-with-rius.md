@@ -132,4 +132,4 @@ Both record traces of LangChain and LangGraph apps. The notebook folder has one 
 
 Run the notebook, open the **Support conversation** trace, and switch to the Map view with the latency lens. Which step took the longest: the model, the knowledge base, or the Exa web search?
 
-**Previous:** [07. Multimodal](07-multimodal.md) · **Back to** [docs home](README.md)
+**Previous:** [07. Multimodal](07-multimodal.md) · **Next:** [09. MCP](09-mcp.md) · **Back to** [docs home](README.md)

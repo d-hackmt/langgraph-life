@@ -1,0 +1,50 @@
+[
+  {
+    "id": "KB-101",
+    "title": "Error 503 Service Unavailable on the API gateway",
+    "keywords": ["503", "service unavailable", "gateway", "upstream"],
+    "solution": "A 503 means the gateway could not reach a healthy upstream worker. 1) Check the worker pool on the status dashboard. 2) Restart unhealthy worker nodes with `nwctl workers restart --unhealthy`. 3) If more than 30% of workers are down, open a P1 incident."
+  },
+  {
+    "id": "KB-102",
+    "title": "Error 401 Unauthorized after rotating API keys",
+    "keywords": ["401", "unauthorized", "api key", "token", "auth"],
+    "solution": "Old keys stop working 15 minutes after rotation. Update the key in every service's secret store and redeploy. Check the clock on the client machine: tokens are rejected if the clock is more than 5 minutes off."
+  },
+  {
+    "id": "KB-103",
+    "title": "Error 429 Too Many Requests",
+    "keywords": ["429", "rate limit", "too many requests", "throttle"],
+    "solution": "The default limit is 600 requests per minute per key. Add exponential backoff and respect the Retry-After header. Enterprise customers can request a higher limit through their account manager."
+  },
+  {
+    "id": "KB-104",
+    "title": "Database connection pool exhausted",
+    "keywords": ["connection pool", "database", "timeout", "too many connections"],
+    "solution": "Raise `pool_size` from the default of 20 only after checking for leaked connections. Make sure every session is closed in a `finally` block. Long-running reports should use the read replica."
+  },
+  {
+    "id": "KB-105",
+    "title": "TLS certificate expired",
+    "keywords": ["tls", "ssl", "certificate", "expired", "handshake"],
+    "solution": "Certificates managed by Northwind renew automatically 30 days before expiry. For custom domains, upload the new certificate under Settings > Domains. Clients pinning the old certificate must be updated."
+  },
+  {
+    "id": "KB-106",
+    "title": "Slow dashboard loading",
+    "keywords": ["slow", "dashboard", "latency", "loading"],
+    "solution": "Dashboards with more than 50 widgets load slowly. Split them into tabs. Clear the browser cache and check the status page for regional latency."
+  },
+  {
+    "id": "KB-107",
+    "title": "Webhook deliveries failing",
+    "keywords": ["webhook", "delivery", "callback", "retry"],
+    "solution": "Webhooks are retried 5 times over 1 hour. Your endpoint must return a 2xx within 10 seconds. Check the delivery log under Settings > Webhooks for the exact error."
+  },
+  {
+    "id": "KB-108",
+    "title": "Billing: invoice shows the wrong plan",
+    "keywords": ["billing", "invoice", "plan", "charge", "refund"],
+    "solution": "Plan changes take effect at the next billing cycle. If you were charged for the wrong plan, the billing team can issue a prorated refund within 5 business days."
+  }
+]
